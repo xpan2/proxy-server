@@ -1,0 +1,44 @@
+######demo 1######
+#start server
+bodemon index.js
+#run echo
+curl -v http://127.0.0.1:8000 -d "hello world" -H "x-asdf: foo"
+
+
+######demo 2######
+#start server
+bodemon index.js
+#run proxy 
+curl -v http://127.0.0.1:8001 -d "hello world" -H "x-asdf: foo"
+
+
+######demo 3######
+#start with google.com as host
+bodemon index.js --host www.google.com
+#run without body
+curl -v http://127.0.0.1:8001 -H "x-asdf: foo"
+
+
+######demo 4######
+#start with url
+bodemon index.js --url http://www.google.com
+#run
+curl -v http://127.0.0.1:8001 -H "x-asdf: foo"
+
+
+######demo 5######
+#start
+bodemon index.js
+#run proxy with google.com as x-destination-url
+curl -v http://127.0.0.1:8001 -H "x-destination-url: http://www.google.com"
+
+
+######demo 6######
+#start with log file
+bodemon index.js --log=./proxy-server.log
+#run
+curl -v http://127.0.0.1:8001 -H "x-asdf: foo"
+#show log file
+vi proxy-server.log
+~                                                                                                   
+~                                                           
